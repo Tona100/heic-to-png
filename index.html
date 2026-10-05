@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HEIC to PNG — Free & Private</title>
+  <meta name="description" content="Convert HEIC photos to PNG for free. Batch convert your photos directly in your browser.">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="container">
+    <div class="badge">FREE • PRIVATE • BATCH CONVERSION</div>
+    <h1>HEIC → PNG</h1>
+    <p class="subtitle">Convert your HEIC photos to PNG. No signup. Your photos stay on your device.</p>
+
+    <section class="card">
+      <div id="dropZone" class="drop-zone">
+        <div class="icon">↥</div>
+        <h2>Drop HEIC files here</h2>
+        <p>or</p>
+        <label class="button secondary" for="fileInput">Choose files</label>
+        <input id="fileInput" type="file" accept=".heic,.heif,image/heic,image/heif" multiple>
+        <small>Batch conversion • Your files are processed in your browser<br>Tip: Copy HEIC/HEIF files in Finder and press ⌘V to paste them</small>
+      </div>
+
+      <div id="fileList" class="file-list hidden"></div>
+
+      <div id="progressArea" class="hidden">
+        <div class="progress-header">
+          <span id="progressText">Preparing...</span>
+          <span id="progressPercent">0%</span>
+        </div>
+        <div class="progress-track"><div id="progressBar"></div></div>
+      </div>
+
+      <div class="actions">
+        <button id="convertButton" class="button primary" disabled>Convert to PNG</button>
+        <button id="downloadButton" class="button secondary hidden">Download All as ZIP</button>
+        <button id="clearButton" class="button text hidden">Clear</button>
+      </div>
+
+      <div id="status" class="status"></div>
+    </section>
+
+    <section class="features">
+      <div><strong>Unlimited</strong><span>No artificial 5-file limit</span></div>
+      <div><strong>Private</strong><span>Photos stay on your device</span></div>
+      <div><strong>Simple</strong><span>No account required</span></div>
+    </section>
+
+    <footer>HEIC → PNG Converter • Built for fast batch conversion</footer>
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/heic-to@1.6.5/dist/iife/heic-to.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/jszip@3.10.1/dist/jszip.min.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
