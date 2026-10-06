@@ -134,7 +134,13 @@ async function convertAll() {
   );
 
   if (convertedFiles.length) {
-    renderConvertedFiles();
+    if (typeof gtag === "function") {
+      gtag("event", "conversion_complete", {
+        files_selected: selectedFiles.length,
+        files_converted: convertedFiles.length
+      });
+    }   
+ renderConvertedFiles();
     status.textContent =
       `Conversion complete. ${convertedFiles.length} PNG file${convertedFiles.length === 1 ? "" : "s"} ready to download.`;
     downloadButton.classList.remove("hidden");
